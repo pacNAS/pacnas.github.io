@@ -19,3 +19,7 @@ project. Please use the octopress command:
 
 for this. It is necessary, that you are doing it, and it is necessary, that you are
 doing it with the correct setting for the pacnas repository.
+
+Some more useful commands in _deploy:
+
+* git branch --set-upstream-to=origin/master master
