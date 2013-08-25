@@ -1,1 +1,14 @@
 .blank {}
+
+.avatar img {
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 5px solid $blue;
+  width: 90px;
+  height: 90px;
+}
+
+.grid .grid__item ul {
+  margin-left: 20px;
+  text-align: left;
+}
