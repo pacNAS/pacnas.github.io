@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-08-25T15:12:49+02:00</updated>
+  <updated>2013-08-25T15:17:16+02:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -24,15 +24,15 @@ discogs collection. This collection contains all CDs in my collection, which are
 already converted. Right now (current number of collection items is 521) I did
 convert already half of the whole (and unfortunately still growing) collection.</p>
 
-<!-- more -->
-
-
 <p>During this phase of ripping and tagging and handling my collection, I was searching
 for a nice Media Player, which is able to play my quite large music collection
 and present this in a &ldquo;standard&rdquo; way. Some goodies on this would be a control of
 what is played via my smartphone or some other nice way (e.g. web interface). I
 stumbled across <a href="http://www.minimserver.com">minimserver</a> and I am still very much
 interested in this project.</p>
+
+<!-- more -->
+
 
 <p>So now you are asking, what does this have to do with a NAS distribution? Well,
 during my search for this &ldquo;music server&rdquo; I looked for different NAS distributions
