@@ -12,7 +12,6 @@ popular flac-format. Just as an information, you can take a look into [my](http:
 discogs collection. This collection contains all CDs in my collection, which are
 already converted. Right now (current number of collection items is 521) I did
 convert already half of the whole (and unfortunately still growing) collection.
-<!-- more -->
 
 During this phase of ripping and tagging and handling my collection, I was searching
 for a nice Media Player, which is able to play my quite large music collection
@@ -20,6 +19,7 @@ and present this in a "standard" way. Some goodies on this would be a control of
 what is played via my smartphone or some other nice way (e.g. web interface). I
 stumbled across [minimserver](http://www.minimserver.com) and I am still very much
 interested in this project.
+<!-- more -->
 
 So now you are asking, what does this have to do with a NAS distribution? Well,
 during my search for this "music server" I looked for different NAS distributions
