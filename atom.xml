@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-08-25T13:52:58+02:00</updated>
+  <updated>2013-08-25T15:07:45+02:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,5 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pacNAS - Why A New Distro?]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/08/25/pacnas-why-a-new-distro/"/>
+    <updated>2013-08-25T14:01:00+02:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/08/25/pacnas-why-a-new-distro</id>
+    <content type="html"><![CDATA[<p>A couple of month ago I did start to rip all my CDs into the nowadays quite
+popular flac-format. Just as an information, you can take a look into <a href="http://www.discogs.com/collection?user=triplem74">my</a>
+discogs collection. This collection contains all CDs in my collection, which are
+already converted. Right now (current number of collection items is 521) I did
+convert already half of the whole (and unfortunately still growing) collection.</p>
+
+<!-- more -->
+
+
+<p>During this phase of ripping and tagging and handling my collection, I was searching
+for a nice Media Player, which is able to play my quite large music collection
+and present this in a &ldquo;standard&rdquo; way. Some goodies on this would be a control of
+what is played via my smartphone or some other nice way (e.g. web interface). I
+stumbled across <a href="http://www.minimserver.com">minimserver</a> and I am still very much
+interested in this project.</p>
+
+<p>So now you are asking, what does this have to do with a NAS distribution? Well,
+during my search for this &ldquo;music server&rdquo; I looked for different NAS distributions
+(music files can grow quite quickly and there is lots of disc space needed) and
+decided, that I need a NAS to store all my files. This NAS should be able to run
+minimserver and also probably some other related stuff (like e.g. a kind of proxy,
+to be able to let the music stream to my stereo without having the smartphone
+turned on all the time). Since minimserver uses Java I thought, all is fine and
+I can probably use an already existing NAS distribution. But far from it, since
+minimserver is also using some distribution related binaries. This is still possible
+with all of the NAS distributions, but with a higher effort (at least on the
+FreeBSD based distros, since there I needed the Linux compatibility mode).</p>
+
+<p>Of course I stumbled on the <a href="http://openmediavault.org/">OpenMediaVault</a> distro,
+which is Linux based. This distro is based on Debian, which I am not really into,
+and furthermore it is based on a slightly outdated Kernel, so I would not be able
+to use the latest up and coming filesystem (Btrfs).</p>
+
+<p>After some digging around and much thoughts, I decided to create a new distro based
+on my preferred distro <a href="http://www.archlinux.org">ArchLinux</a>. This distro has the
+advantage, that I know it quite well (I use it since nearly 5 years) and it has
+a very large and active community. Furthermore it does provide the latest and greatest
+kernel version all the time.</p>
+
+<p>Since I already participated in a &ldquo;new distribution project&rdquo; (ArchServer), I
+asked the founder of this project (fukawi2), if he would like to participate.
+Fortunately, he said yes. The new distro &ldquo;pacNAS&rdquo; was born.</p>
+
+<p>Why the name pacNAS? pacNAS is a concatination of the word &ldquo;pacman&rdquo; (the famous
+package manager of ArchLinux) and the word &ldquo;NAS&rdquo;, which tells you, that we are mainly
+focused on being a NAS distribution.</p>
+
+<p>If you have any further questions, remarks, do not hesitate to leave a comment.
+Furthermore, if you like the idea and like to participate as well, contact us via
+email (see our <a href="http://github.com/pacNAS">github project</a>).</p>
+]]></content>
+  </entry>
   
 </feed>
