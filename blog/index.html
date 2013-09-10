@@ -11,8 +11,8 @@
     <title>pacNAS</title>
     <meta name="author" content="pacNAS community">
     
-    <meta name="description" content="pacNAS - Why A New Distro? Aug 25th, 2013 Posted by triplem A couple of month ago I did start to rip all my CDs into the nowadays quite
-popular flac &hellip;">
+    <meta name="description" content="btrfs - best practices Sep 10th, 2013 Posted by triplem Right now we are adapting the installer to use btrfs as the base filesystem for
+the PacNAS &hellip;">
     
     <meta name="viewport" content="width=device-width">
     
@@ -64,6 +64,102 @@ popular flac &hellip;">
 
           
 
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="title indent">
+    <a href="/blog/2013/09/10/btrfs-best-practices/">btrfs - best practices</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2013-09-10T20:56:00+02:00" pubdate data-updated="true"><i class="icon-calendar"></i> Sep 10<span>th</span>, 2013</time>
+    
+  
+
+<span class="byline author vcard">Posted by <span class="fn">triplem</span></span>
+
+    
+
+
+
+  
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>Right now we are adapting the installer to use btrfs as the base filesystem for
+the PacNAS system. There are obviously a couple of ways on implementing this, so
+that we try to &ldquo;suggest&rdquo; one way to do this, but also allowing other possible ways
+as well.</p>
+
+<ol>
+<li><p>Partioning
+If you are searching for &ldquo;btrfs best practices&rdquo;, you will stumb across <a href="http://comments.gmane.org/gmane.comp.file-systems.btrfs/25423">this</a>
+mailing list entry, and I guess, we are going to follow the &ldquo;partition instead
+of raw device&rdquo; philosophy. We will create one partition on the wanted device and
+will then separate the partition by using subvolumes.</p></li>
+<li><p>Subvolumes
+I guess, that <a href="http://blog.fabio.mancinelli.me/2012/12/28/Arch_Linux_on_BTRFS.html">Bitloom</a>
+suggests a valid approach for subvolumes on a btrfs root volume. What I don&rsquo;t like about
+his approach is the subvolume for /var and the mounting of /var/lib into the root
+subvolume. If you take a look on <a href="http://blog.patshead.com/2010/02/testing-btrfs-root-file-system-on-ubuntu.html">patshead.com</a>
+you will read, that he prefers to creates many subvolumes beneath the root of the
+Btrfs volume. I guess this is a way more KISS way.</p></li>
+</ol>
+
+
+<h1>&ldquo;Our&rdquo; Best Practices</h1>
+
+<ol>
+<li>We are partioning the wanted drive with just one partition.</li>
+<li>We are creating a couple of subvolumes (rootfs, tmpfs) on this partition and
+mount these volumes to the corresponding mount points (/ to rootfs, /tmp to tmpfs).</li>
+<li>On each update of the system, we are creating a snapshot (at least provide
+some scripts for this), and do provide a mechanism to &ldquo;undo&rdquo; the latest update.</li>
+<li>We are not using a homefs subvolume, since we strongly believe that the home
+directories are stored on separate partitions (meaning: data drives). Of course
+these data drives can (and should) be formatted with btrfs.</li>
+<li>It is a possibility to use the btrfs seed-device as a &ldquo;live&rdquo; system and copy this
+drive over to the new system. This needs to get investigated, but see <a href="http://en.wikipedia.org/wiki/Btrfs#Seed_devices">Wikipedia &ndash; btrfs</a>.</li>
+</ol>
+
+
+<h1>Some Roadmap Things</h1>
+
+<ol>
+<li>Create scripts for creating and restoring snapshots before/after an pacman
+update.</li>
+<li>Add mkinitcpio-btrfs hook as a default.</li>
+</ol>
+
+
+<p>What do you think about our Best Practices, what suggestions do you have? We are
+more then happy to get some feedback.</p>
+
+
+  </article>
+  <hr>
 
   
   <article class="listing">
@@ -161,6 +257,10 @@ interested in this project.</p>
 <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      <li class="post">
+        <a href="/blog/2013/09/10/btrfs-best-practices/">btrfs - best practices</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/08/25/pacnas-why-a-new-distro/">pacNAS - Why A New Distro?</a>

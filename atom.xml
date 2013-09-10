@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-08-28T22:26:32+02:00</updated>
+  <updated>2013-09-10T22:44:41+02:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[btrfs - best practices]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/09/10/btrfs-best-practices/"/>
+    <updated>2013-09-10T20:56:00+02:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/09/10/btrfs-best-practices</id>
+    <content type="html"><![CDATA[<p>Right now we are adapting the installer to use btrfs as the base filesystem for
+the PacNAS system. There are obviously a couple of ways on implementing this, so
+that we try to &ldquo;suggest&rdquo; one way to do this, but also allowing other possible ways
+as well.</p>
+
+<ol>
+<li><p>Partioning
+If you are searching for &ldquo;btrfs best practices&rdquo;, you will stumb across <a href="http://comments.gmane.org/gmane.comp.file-systems.btrfs/25423">this</a>
+mailing list entry, and I guess, we are going to follow the &ldquo;partition instead
+of raw device&rdquo; philosophy. We will create one partition on the wanted device and
+will then separate the partition by using subvolumes.</p></li>
+<li><p>Subvolumes
+I guess, that <a href="http://blog.fabio.mancinelli.me/2012/12/28/Arch_Linux_on_BTRFS.html">Bitloom</a>
+suggests a valid approach for subvolumes on a btrfs root volume. What I don&rsquo;t like about
+his approach is the subvolume for /var and the mounting of /var/lib into the root
+subvolume. If you take a look on <a href="http://blog.patshead.com/2010/02/testing-btrfs-root-file-system-on-ubuntu.html">patshead.com</a>
+you will read, that he prefers to creates many subvolumes beneath the root of the
+Btrfs volume. I guess this is a way more KISS way.</p></li>
+</ol>
+
+
+<h1>&ldquo;Our&rdquo; Best Practices</h1>
+
+<ol>
+<li>We are partioning the wanted drive with just one partition.</li>
+<li>We are creating a couple of subvolumes (rootfs, tmpfs) on this partition and
+mount these volumes to the corresponding mount points (/ to rootfs, /tmp to tmpfs).</li>
+<li>On each update of the system, we are creating a snapshot (at least provide
+some scripts for this), and do provide a mechanism to &ldquo;undo&rdquo; the latest update.</li>
+<li>We are not using a homefs subvolume, since we strongly believe that the home
+directories are stored on separate partitions (meaning: data drives). Of course
+these data drives can (and should) be formatted with btrfs.</li>
+<li>It is a possibility to use the btrfs seed-device as a &ldquo;live&rdquo; system and copy this
+drive over to the new system. This needs to get investigated, but see <a href="http://en.wikipedia.org/wiki/Btrfs#Seed_devices">Wikipedia &ndash; btrfs</a>.</li>
+</ol>
+
+
+<h1>Some Roadmap Things</h1>
+
+<ol>
+<li>Create scripts for creating and restoring snapshots before/after an pacman
+update.</li>
+<li>Add mkinitcpio-btrfs hook as a default.</li>
+</ol>
+
+
+<p>What do you think about our Best Practices, what suggestions do you have? We are
+more then happy to get some feedback.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pacNAS - Why A New Distro?]]></title>
