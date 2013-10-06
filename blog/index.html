@@ -108,44 +108,14 @@ a couple of &hellip;">
 
 
 
+<div class="entry-content clearfix">
   <p>Our installer (currently a very easy and still a rough draft version) brought up
 a couple of problems. We have taken a look onto the <a href="https://github.com/Antergos/Cnchi">antergos Cnchi installer</a>
 and decided that the CLI part of it seems to be a good starting poing.</p>
 
-<p>We have stripped this installer and reworked it, so that we can use it for our own
-purposes. Basically the installer does now provide the following functionality:</p>
 
-<ul>
-<li>Select the language</li>
-<li>Select a keymap</li>
-<li>Adjust time and date &ndash; This is not working right now, in that the selected
-date and time are not used on the new installed system.</li>
-<li>Prepare Harddrives &ndash; This is an easy way to partition and format the harddrive
-fully automatic. The subvolumes for btrfs are created in this step as well. There
-is still some work needed to provide some adjustements for ssds and normal hard disks.</li>
-<li>Install the System &ndash; The base packages are installed into the newly created system.</li>
-<li>Configure the System &ndash; Some minor configuration for the system.</li>
-</ul>
-
-
-<p>Well, this is pretty much it. We definitly would like to add some possibilities, so
-that you are able to provide your own partition scheme, if you would like to. Most
-probably we will follow the steps used from the original
-<a href="https://wiki.archlinux.org/index.php/Installation_Guide">ArchLinux Install scripts</a>.</p>
-
-<p>Furthermore there is still some room for error handling and other optimizations, but
-for a rough first draft, it looks pretty good ;&ndash;)</p>
-
-<p>One problem arose during the implementation. Since we are using btrfs on our root
-file system, the mkinitcpio-fsck-hook reported an error, that fsck.btrfs is not
-available. Digging into this issue brought up some <a href="https://bugs.archlinux.org/task/37203">errors</a>
-in the ArchLinux bugtracker. Due to the response in the shown Bug, we have decided
-to provide our own <a href="https://github.com/pacNAS/pkgbuilds/tree/master/core/mkinitcpio">mkinitcpio-package</a>.
-This version basically patches the HOOKS-variable to not use the fsck-hook anymore.</p>
-
-<p>So, if you have any ideas and/or recommendations for improvements of the installer,
-feel free to fork and add pull requests. We are more then happy to receive those ;&ndash;)</p>
-
+  <a class="btn pull-right" href="/blog/2013/10/06/pacnas-installer/">Read on &rarr;</a>
+</div>
 
   </article>
   <hr>
