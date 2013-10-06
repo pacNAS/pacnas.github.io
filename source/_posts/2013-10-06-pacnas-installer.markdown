@@ -10,6 +10,7 @@ categories:
 Our installer (currently a very easy and still a rough draft version) brought up
 a couple of problems. We have taken a look onto the [antergos Cnchi installer](https://github.com/Antergos/Cnchi)
 and decided that the CLI part of it seems to be a good starting poing.
+<!-- more -->
 
 We have stripped this installer and reworked it, so that we can use it for our own
 purposes. Basically the installer does now provide the following functionality:
