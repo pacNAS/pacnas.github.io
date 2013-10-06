@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-09-10T23:00:47+02:00</updated>
+  <updated>2013-10-06T17:53:36+02:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pacnas installer]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/10/06/pacnas-installer/"/>
+    <updated>2013-10-06T17:19:00+02:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/10/06/pacnas-installer</id>
+    <content type="html"><![CDATA[<p>Our installer (currently a very easy and still a rough draft version) brought up
+a couple of problems. We have taken a look onto the <a href="https://github.com/Antergos/Cnchi">antergos Cnchi installer</a>
+and decided that the CLI part of it seems to be a good starting poing.</p>
+
+<p>We have stripped this installer and reworked it, so that we can use it for our own
+purposes. Basically the installer does now provide the following functionality:</p>
+
+<ul>
+<li>Select the language</li>
+<li>Select a keymap</li>
+<li>Adjust time and date &ndash; This is not working right now, in that the selected
+date and time are not used on the new installed system.</li>
+<li>Prepare Harddrives &ndash; This is an easy way to partition and format the harddrive
+fully automatic. The subvolumes for btrfs are created in this step as well. There
+is still some work needed to provide some adjustements for ssds and normal hard disks.</li>
+<li>Install the System &ndash; The base packages are installed into the newly created system.</li>
+<li>Configure the System &ndash; Some minor configuration for the system.</li>
+</ul>
+
+
+<p>Well, this is pretty much it. We definitly would like to add some possibilities, so
+that you are able to provide your own partition scheme, if you would like to. Most
+probably we will follow the steps used from the original
+<a href="https://wiki.archlinux.org/index.php/Installation_Guide">ArchLinux Install scripts</a>.</p>
+
+<p>Furthermore there is still some room for error handling and other optimizations, but
+for a rough first draft, it looks pretty good ;&ndash;)</p>
+
+<p>One problem arose during the implementation. Since we are using btrfs on our root
+file system, the mkinitcpio-fsck-hook reported an error, that fsck.btrfs is not
+available. Digging into this issue brought up some <a href="https://bugs.archlinux.org/task/37203">errors</a>
+in the ArchLinux bugtracker. Due to the response in the shown Bug, we have decided
+to provide our own <a href="https://github.com/pacNAS/pkgbuilds/tree/master/core/mkinitcpio">mkinitcpio-package</a>.
+This version basically patches the HOOKS-variable to not use the fsck-hook anymore.</p>
+
+<p>So, if you have any ideas and/or recommendations for improvements of the installer,
+feel free to fork and add pull requests. We are more then happy to receive those ;&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[btrfs - best practices - part 2]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/09/11/btrfs-best-practices-part-2/"/>
+    <updated>2013-09-11T22:39:00+02:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/09/11/btrfs-best-practices-part-2</id>
+    <content type="html"><![CDATA[<p>We discussed the usage of btrfs in our previous post. We discovered a nice
+mkinitcpio-hook, which allows us to provide a rollback option based on snapshots.
+We have forked an up-to-date version, and will most probably provide some
+additional documentation and scripts. For the source of the package see <a href="https://github.com/pacNAS/mkinitcpio-btrfs">github &ndash; source</a>
+and <a href="https://github.com/pacNAS/pkgbuilds/tree/master/core/mkinitcpio-btrfs">gihub &ndash; package</a>.</p>
+
+<p>Our new installer will use the suggested structure of the btrfs subvolumes while creating
+the disk structure of the new system.</p>
+
+<p>We do have created a new version of the above mentioned sources. This new version is
+slightly adopted to our needs. The original version (<a href="https://github.com/xtfxme/mkinitcpio-btrfs">xtfxme</a>)
+contains both the logic/source as well as the PKGBUILD, which we split, to keep these
+separate.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[btrfs - best practices]]></title>
