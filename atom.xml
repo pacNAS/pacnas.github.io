@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-10-27T20:58:16+01:00</updated>
+  <updated>2013-10-27T20:59:31+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -41,11 +41,14 @@ can take a look at their source code <a href="https://bitbucket.org/VLCore/vlbui
 <p>Since buildbot does a separation of a build into several steps, we defined the following
 steps for our builds:</p>
 
-<p>1) create the source package of a package (using makepkg &mdash;allsource)
-1) create two build chroots (i686 and x86_64)
-1) copy source package and build in the corresponding chroot (e.g. each architecture)
-1) copy build source package to a accessable directory (accessable from a HTTP share)
-1) copy build package into the corresponding repository (e.g. core/extra/community and i686/x86_64/any)</p>
+<ol>
+<li>create the source package of a package (using makepkg &mdash;allsource)</li>
+<li>create two build chroots (i686 and x86_64)</li>
+<li>copy source package and build in the corresponding chroot (e.g. each architecture)</li>
+<li>copy build source package to a accessable directory (accessable from a HTTP share)</li>
+<li>copy build package into the corresponding repository (e.g. core/extra/community and i686/x86_64/any)</li>
+</ol>
+
 
 <p>We tried already some different order and separation of build steps (try to use the grub
 package, since this one does seem to be &ldquo;special&rdquo;, and requires some special treatment, e.g.
