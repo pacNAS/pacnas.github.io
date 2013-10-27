@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-10-06T17:55:48+02:00</updated>
+  <updated>2013-10-27T20:58:16+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[howto build a buildservice]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/10/27/howto-build-a-buildservice/"/>
+    <updated>2013-10-27T20:23:00+01:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/10/27/howto-build-a-buildservice</id>
+    <content type="html"><![CDATA[<p>Currently we are trying to automate the build of our own packages. Therfore we just have
+rented a server from <a href="http://www.netcup.de">netcup.de</a>, because they do have some fair
+offers (see <a href="http://www.netcup.de/bestellen/produkt.php?produkt=547">here</a>).
+Based on this offer, we do have already established our own package repository (a domain for
+this will be published soon). Furthermore we need a build service, and this should be based
+on the already exisiting build-services from archlinux (called devtools).</p>
+
+<!-- more -->
+
+
+<p>After some initial investigations, the <a href="http://www.buildbot.net">buildbot</a> seems to be a
+good solution to build something like this fully automatic. After looking at the
+ArchLinux <a href="https://wiki.archlinux.org/index.php/Automated_Package_Build_System">Quarters</a> wiki
+page and the proposed solutions there, we decided to take a look at other possible solutions
+and walked across <a href="http://vlcore.vectorlinux.com/buildbot/">VectorLinux Buildbot</a>.</p>
+
+<p>This buildbot is a adoption of the original buildbot and offers some modifications, which
+are necessary for us as well (e.g. one multi-project repository with several &ldquo;packages&rdquo;). You
+can take a look at their source code <a href="https://bitbucket.org/VLCore/vlbuildbot/src">here</a>.</p>
+
+<p>Since buildbot does a separation of a build into several steps, we defined the following
+steps for our builds:</p>
+
+<p>1) create the source package of a package (using makepkg &mdash;allsource)
+1) create two build chroots (i686 and x86_64)
+1) copy source package and build in the corresponding chroot (e.g. each architecture)
+1) copy build source package to a accessable directory (accessable from a HTTP share)
+1) copy build package into the corresponding repository (e.g. core/extra/community and i686/x86_64/any)</p>
+
+<p>We tried already some different order and separation of build steps (try to use the grub
+package, since this one does seem to be &ldquo;special&rdquo;, and requires some special treatment, e.g.
+it is using bzr as a source package as well as it uses the CARCH-Variable in the PKGBUILD)
+and the above build order seemed to work quite well. Further adjustements int he future are
+possible and will be implemented, if the need arises.</p>
+
+<p>There are still some issues concerning permissions, but those do seem to be resolvable. Other then
+that we do plan to push a first rough draft of our solution to github quite soon, pleas watch the
+devtools-repository and most probably a new repository with the buildbot itself will pop up as well.</p>
+
+<p>Up until this, we are more then happy to receive some feedback from your side. What are your thoughts
+on this one?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pacnas installer]]></title>
