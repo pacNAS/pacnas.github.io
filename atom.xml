@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-10-27T20:59:31+01:00</updated>
+  <updated>2013-11-02T20:39:04+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pacnas buildbot]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/11/02/pacnas-buildbot/"/>
+    <updated>2013-11-02T20:29:00+01:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/11/02/pacnas-buildbot</id>
+    <content type="html"><![CDATA[<p>In my last post, I have written about the <a href="http://vlcore.vectorlinux.com/buildbot/">VectorLinux Buildbot</a>.
+We have now adopted this basic bot configuration to our needs and published it to
+our <a href="http://github.com/pacNAS/pnbuildbot">github repository</a>.</p>
+
+<p>The next step is now, to get this bot installed on our server, to make full use of it.
+The bot is configured mainly via the pnconf.ini-File. Furthermore the manifest-File
+contains a list of all packages, which are being build with the bot.</p>
+
+<p>Oh, one more thing. We have now setup an IRC-Channel on the freenode-Network (where else).
+You can try to get in contact with us on the #pacnas Channel. Hope to see you there.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[howto build a buildservice]]></title>
