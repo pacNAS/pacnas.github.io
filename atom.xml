@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-11-11T21:01:52+01:00</updated>
+  <updated>2013-11-11T21:04:37+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -35,12 +35,12 @@ the following repositories:</p>
 
 
 <p>Those repositories are filled via our own now up and working buildbot instance
-at <a href="http://build.pacnas.org/buildbot.">http://build.pacnas.org/buildbot.</a></p>
+at <a href="http://build.pacnas.org/buildbot">http://build.pacnas.org/buildbot</a></p>
 
 <p>If you are willing to contribute, you can get access to the bot as well as
 are able to provide an own buildslave. We are working also on a PKGBUILD to
 install the slave to an pacNAS system. The sources for the buildbot are located
-in our github repository at <a href="http://github.com/pacNAS/pnbuildbot.">http://github.com/pacNAS/pnbuildbot.</a></p>
+in our github repository at <a href="http://github.com/pacNAS/pnbuildbot">http://github.com/pacNAS/pnbuildbot</a></p>
 ]]></content>
   </entry>
   
