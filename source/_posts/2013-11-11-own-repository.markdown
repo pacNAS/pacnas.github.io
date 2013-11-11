@@ -19,9 +19,9 @@ the following repositories:
 * pn-testing
 
 Those repositories are filled via our own now up and working buildbot instance
-at http://build.pacnas.org/buildbot.
+at http://build.pacnas.org/buildbot
 
 If you are willing to contribute, you can get access to the bot as well as
 are able to provide an own buildslave. We are working also on a PKGBUILD to
 install the slave to an pacNAS system. The sources for the buildbot are located
-in our github repository at http://github.com/pacNAS/pnbuildbot.
+in our github repository at http://github.com/pacNAS/pnbuildbot
