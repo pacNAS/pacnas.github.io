@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-11-02T20:39:04+01:00</updated>
+  <updated>2013-11-11T21:01:52+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[own repository]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/11/11/own-repository/"/>
+    <updated>2013-11-11T20:57:00+01:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/11/11/own-repository</id>
+    <content type="html"><![CDATA[<p>Our own binary repository is now reachable on the newly installed server
+build.pacnas.org. To use this repository, you should edit your mirrorlist
+and point it to <a href="http://build.pacnas.org/pacnas/$repo/os/$arch.">http://build.pacnas.org/pacnas/$repo/os/$arch.</a> We do provide
+the following repositories:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>pn-core</li>
+<li>pn-extra</li>
+<li>pn-community and</li>
+<li>pn-testing</li>
+</ul>
+
+
+<p>Those repositories are filled via our own now up and working buildbot instance
+at <a href="http://build.pacnas.org/buildbot.">http://build.pacnas.org/buildbot.</a></p>
+
+<p>If you are willing to contribute, you can get access to the bot as well as
+are able to provide an own buildslave. We are working also on a PKGBUILD to
+install the slave to an pacNAS system. The sources for the buildbot are located
+in our github repository at <a href="http://github.com/pacNAS/pnbuildbot.">http://github.com/pacNAS/pnbuildbot.</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pacnas buildbot]]></title>
