@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-11-11T21:04:37+01:00</updated>
+  <updated>2013-11-23T21:25:25+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[install willie]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/11/23/install-willie/"/>
+    <updated>2013-11-23T20:24:00+01:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/11/23/install-willie</id>
+    <content type="html"><![CDATA[<p>This is mainly a documentation post on how to install <a href="http://willie.dftba.net/">willie</a>
+as a service on an ArchLinux server.</p>
+
+<!-- more -->
+
+
+<p>All necessary dependencies can be installed easily with pacman (mainly: python2-pytz
+and python2-pyopenssl). The willie PKGBUILD can be found in the <a href="https://aur.archlinux.org/packages/willie/">AUR</a>.</p>
+
+<p>After the install, the bot installs a new configuration file in ~/.willie. This file
+should be adopted later. I have made the following adoptions to the config:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[core]
+</span><span class='line'>logdir = /var/log/willie
+</span><span class='line'>pid_dir = /run/willie</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above mentioned directories are created manually ;&ndash;) Of course the rights
+need to be set as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chown root:willie /var/log/willie -R
+</span><span class='line'>chmod g+w /var/log/willie -R
+</span><span class='line'>
+</span><span class='line'>chown root:willie /run/willie -R
+</span><span class='line'>chmod g+w /run/willie -R</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[db]
+</span><span class='line'>userdb_type = sqlite
+</span><span class='line'>userdb_file = /var/lib/willie/willie.db</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above mentioned directory is created manually as well. The db-file is
+created then automatically. The rights need to get set here as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chown root:willie /var/lib/willie -R
+</span><span class='line'>chmod g+w /var/lib/willie -R</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A new user (willie) is created using the following command</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>useradd -d /var/lib/willie -M willie</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The I copied the <a href="https://github.com/embolalia/willie/blob/master/contrib/willie.service">willie.service</a>
+to /etc/systemd/system/willie.service. Some pathes (e.g. to the config file) needs to get adopted
+accordingly. Of course this service needs to get enabled via systemctl ;&ndash;)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[own repository]]></title>
