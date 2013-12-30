@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2013-11-23T21:25:25+01:00</updated>
+  <updated>2013-12-30T16:46:54+01:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[year end notice]]></title>
+    <link href="http://pacNAS.github.io/blog/2013/12/30/year-end-notice/"/>
+    <updated>2013-12-30T16:37:00+01:00</updated>
+    <id>http://pacNAS.github.io/blog/2013/12/30/year-end-notice</id>
+    <content type="html"><![CDATA[<p>This post is just a notice to inform you, that the year is going to end, but not
+this project. Currently we are adding some functionalities to ajenti to provide a
+working system also on ArchLinux. Since we are based on ArchLinux, this is also
+of interest for our own project (lets put it in other words, we are doing these
+extensions specifically for us and these are working on AL as well).</p>
+
+<!-- more -->
+
+
+<p>We still have plans for the project. It was quite silent during the last month,
+but nonetheless we are still working behind the scenes on it. See especially the
+commits we have done on the <a href="https://github.com/Eugeny/ajenti">ajenti</a>.</p>
+
+<p>Furthermore we are trying to get approval of Simon (the owner of minimserver), to
+be able to provide this nice UPNP-Server directly in our distro.</p>
+
+<p>So, you see, some small but necessary features are in the works, and the next
+most needed step is a first release of the installer-ISO. Please wait a couple of
+days (aeh, weeks?) and this is going to happen.</p>
+
+<p>Up until then, I do wish you all a happy new year ;&ndash;)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[install willie]]></title>
