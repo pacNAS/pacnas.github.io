@@ -62,15 +62,15 @@ packages. This could be a problem, if a user would like to upgrade from one rele
 to another or to the rolling release. Therefor we could provide different mirrorlist-files
 which contain a line like this:
 
-´´´
+```
 Server = http://host/pacnas/rolling/$repo/os/$arch
-´´´
+```
 
 or
 
-´´´
+```
 Server = http://host/pacnas/stable-1/$repo/os/$arch
-´´´
+```
 
 Please note, that the names of the releases are not fixed yet ;-)
 
