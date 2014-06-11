@@ -112,7 +112,7 @@
 at home, I am back on track and try to push pacnas further.</p>
 
 <p>Unfortunately there is not a lot of community interest in this project right now, so
-if you like to participate or contribute, just write an email to <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x74;&#x72;&#105;&#112;&#x6c;&#x65;&#x6d;&#64;&#x70;&#x61;&#99;&#x6e;&#97;&#115;&#46;&#100;&#101;">&#x74;&#114;&#x69;&#x70;&#108;&#101;&#x6d;&#x40;&#112;&#x61;&#99;&#110;&#x61;&#x73;&#x2e;&#100;&#x65;</a>.</p>
+if you like to participate or contribute, just write an email to <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#116;&#114;&#x69;&#x70;&#x6c;&#x65;&#x6d;&#x40;&#x70;&#x61;&#x63;&#110;&#x61;&#x73;&#x2e;&#x64;&#x65;">&#116;&#114;&#x69;&#x70;&#x6c;&#x65;&#x6d;&#64;&#x70;&#97;&#99;&#x6e;&#97;&#115;&#x2e;&#100;&#x65;</a>.</p>
 
 <p>Currently I do have some ideas for the future of this project and I would like to
 bring these to your attention in this post.</p>
@@ -165,15 +165,15 @@ packages. This could be a problem, if a user would like to upgrade from one rele
 to another or to the rolling release. Therefor we could provide different mirrorlist-files
 which contain a line like this:</p>
 
-<p>´´´
-Server = <a href="http://host/pacnas/rolling/$repo/os/$arch">http://host/pacnas/rolling/$repo/os/$arch</a>
-´´´</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Server = http://host/pacnas/rolling/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
+
 
 <p>or</p>
 
-<p>´´´
-Server = <a href="http://host/pacnas/stable-1/$repo/os/$arch">http://host/pacnas/stable-1/$repo/os/$arch</a>
-´´´</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Server = http://host/pacnas/stable-1/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Please note, that the names of the releases are not fixed yet ;&ndash;)</p>
 
