@@ -1,0 +1,396 @@
+
+
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>future - a couple of ideas - pacNAS</title>
+    <meta name="author" content="pacNAS community">
+    
+    <meta name="description" content="future - a couple of ideas Jun 11th, 2014 Posted by triplem First post after a couple of busy month. After setting up my cubox-i (of course using &hellip;">
+    
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="canonical" href="http://pacNAS.github.io/blog/2014/06/11/future">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="pacNAS" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+      <a href="/" class="site-title">
+        <img src="/images/logo_sml.png" alt="pacNAS.org" width="209" height="55"/>
+      </a>
+    </div>
+
+    <div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+      <nav>
+        <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="http://wiki.pacnas.org">Wiki</a></li>
+  <li><a href="/project/overview.html">Overview</a></li>
+  <li><a href="/project/team.html">Team</a></li>
+  <li><a href="/blog">News</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <header>
+  
+  <h1 class="title indent">future - a couple of ideas</h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T20:54:00+02:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+  
+
+<span class="byline author vcard">Posted by <span class="fn">triplem</span></span>
+
+    
+
+
+
+  
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>First post after a couple of busy month. After setting up my cubox-i (of course using
+<a href="http://petemanchester.github.io/MediaPlayer/">MediaPlayer</a>) and some more systems
+at home, I am back on track and try to push pacnas further.</p>
+
+<p>Unfortunately there is not a lot of community interest in this project right now, so
+if you like to participate or contribute, just write an email to <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x74;&#x72;&#105;&#112;&#x6c;&#x65;&#x6d;&#64;&#x70;&#x61;&#99;&#x6e;&#97;&#115;&#46;&#100;&#101;">&#x74;&#114;&#x69;&#x70;&#108;&#101;&#x6d;&#x40;&#112;&#x61;&#99;&#110;&#x61;&#x73;&#x2e;&#100;&#x65;</a>.</p>
+
+<p>Currently I do have some ideas for the future of this project and I would like to
+bring these to your attention in this post.</p>
+
+<h1>Release Concept</h1>
+
+<p>After looking at a lot of other distributions, I do like the concept of <a href="http://www.archlinux.org">ArchLinux</a>
+&ndash; pretty obvious, since this distro is going to be based on this one &ndash; but also
+I do like others as well. For the release concept, I think, that <a href="http://alpinelinux.org/">alpinelinux</a>
+has a very interesting one. It is a rolling release distro, if you look at the so
+called &ldquo;edge&rdquo;-version. But furthermore there are several &ldquo;stable&rdquo; releases. Those
+are snapshotted roughly every 6 month. Alpine seems to use the currently available
+kernel at that time.</p>
+
+<p><a href="http://www.ubuntu.com/">Ubuntu</a> is doing something similar, in that they do a
+release every 6 month and every 2 years they do an LTS release. They do have the
+manpower to path their own LTS-Kernel, which is out of reach for us.</p>
+
+<p>So every 6 month seem to be too often for a NAS distribution. Furthermore it looks
+like, there needs to be patches for all available releases and this seems to be
+too much work right now as well. One of the major tasks involved are IMHO the patches
+for the kernel, because not every used kernel is an LTS kernel. See where this is
+heading? I guess, the solution to this one, would be to make a release every year
+at the time an LTS-kernel appears.</p>
+
+<p>Obviously this does resolve patches for the Kernel, but other applications do have
+different release cycles. This means, that the Snapshot could come to a slightly
+too late or too early time for some applications. But this seems to be a minor
+issue, in that if really needed for security purposes, the version could be bumped
+even during a stable release (as long as the configuration of this application does
+not change).</p>
+
+<p>So the release concept for pacnas will look like the following:</p>
+
+<ul>
+<li>have a rolling release</li>
+<li>have a &ldquo;stable&rdquo; release once a year or every two years when a LTS kernel appears
+(this could already be 3.16?)</li>
+<li>support each stable release for at least until the next stable release appears and
+slightly longer (6 month?)</li>
+</ul>
+
+
+<h2>Implications</h2>
+
+<p>To have a rolling release as well as a stable release does mean some implications
+on the package selection. In the first release we could try to use the standard
+pacman and provide a mirrorlist, which contains the release in the path to the
+packages. This could be a problem, if a user would like to upgrade from one release
+to another or to the rolling release. Therefor we could provide different mirrorlist-files
+which contain a line like this:</p>
+
+<p>´´´
+Server = <a href="http://host/pacnas/rolling/$repo/os/$arch">http://host/pacnas/rolling/$repo/os/$arch</a>
+´´´</p>
+
+<p>or</p>
+
+<p>´´´
+Server = <a href="http://host/pacnas/stable-1/$repo/os/$arch">http://host/pacnas/stable-1/$repo/os/$arch</a>
+´´´</p>
+
+<p>Please note, that the names of the releases are not fixed yet ;&ndash;)</p>
+
+<h1>Security</h1>
+
+<p>Security is pretty high on most server distributions. Alpine does solve this by
+using <a href="http://grsecurity.net/">grsecurity</a> patches as well as <a href="http://pax.grsecurity.net/">Pax</a>
+and most probably through other tools and/or patches on applications.</p>
+
+<p>I guess we will put this on the todo list since right now, there is not much experience
+with stuff like this. But it will be put very high on the list.</p>
+
+<h1>Package Selection</h1>
+
+<p>The package selection is pretty important as well. Since there are not much contributions
+right now, the package selection will be very stripped. I gather, that the most
+important packages for a NAS system will be put into the distro.</p>
+
+<h2>first release</h2>
+
+<ul>
+<li>linux (well, that is obvious, right)</li>
+<li>btrfs</li>
+<li>samba</li>
+<li>nfs</li>
+<li>ssh</li>
+<li>netctl</li>
+<li>mdadm</li>
+<li>ftp</li>
+<li>rsync</li>
+</ul>
+
+
+<h2>future releases</h2>
+
+<ul>
+<li>ajenti or genesis</li>
+<li>nginx</li>
+<li>owncloud</li>
+<li>seafile</li>
+<li>crashplan</li>
+<li>&hellip;</li>
+</ul>
+
+
+<p>If you have specific packages, which you would like to see on this list, do not
+hesitate and write an email to the above mentioned email.</p>
+
+<h1>Automatisms</h1>
+
+<p>Since this distro is currently really understuffed (people and timewise), we need
+as much automatisms as possible.</p>
+
+<p>We are going to use the <a href="http://build.pacnas.de">pacnas buildbot</a> to build the
+packages. Most probably this needs to get extended to be able to build dependent
+packages in the correct order and fully automatic.</p>
+
+<p>Furthermore we need to &ldquo;copy&rdquo; packages from AL to our own repository. This should
+be done automatically as well. The most important part is to be able to sync changes
+in AL into our own Repo, if necessary. At least the watch of changes needs to get
+automated.</p>
+
+<h1>Next Steps</h1>
+
+<p>During the next couple of days, I will dig into the above mentioned automatisms
+and will try to automate as much as possible.</p>
+
+<p>Some Marketing is required as well, but before we are going to make some advertisement
+we should have a first rough version ready.</p>
+
+
+</article>
+
+ 
+<section id="disqus">
+  <h2 class="indent title">Comments</h2>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+        
+        </div>
+        
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+<!--
+  
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</section>
+
+-->
+
+  <!--
+<section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      <li class="post">
+        <a href="/blog/2014/06/11/future/">future - a couple of ideas</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/13/media-player/">mediaplayer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/30/year-end-notice/">year end notice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/23/install-willie/">install willie</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/11/own-repository/">own repository</a>
+      </li>
+    
+  </ul>
+</section>
+-->
+  
+
+
+
+
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+        All content by pacNAS community and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
+        Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-43388885-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+
+<script>
+  var disqus_shortname = 'pacnas';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://pacNAS.github.io/blog/2014/06/11/future/';
+    var disqus_url = 'http://pacNAS.github.io/blog/2014/06/11/future/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'pacNAS',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
