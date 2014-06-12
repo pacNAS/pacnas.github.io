@@ -23,9 +23,9 @@
         {% endif %}
 
           {{ content | expand_urls: root_url }}
-        
+
         </div>
-        
+
         {% unless page.sidebar == false %}
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           {% include site/sidebar.html %}
@@ -33,7 +33,7 @@
         {% endunless %}
       </div>
     </div>
-    
+
     <footer>
       {% include site/footer.html %}
     </footer>
