@@ -4,7 +4,7 @@
   <title><![CDATA[pacNAS]]></title>
   <link href="http://pacNAS.github.io/atom.xml" rel="self"/>
   <link href="http://pacNAS.github.io/"/>
-  <updated>2014-06-11T22:53:07+02:00</updated>
+  <updated>2014-06-12T19:09:17+02:00</updated>
   <id>http://pacNAS.github.io/</id>
   <author>
     <name><![CDATA[pacNAS community]]></name>
@@ -14,146 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[future - a couple of ideas]]></title>
-    <link href="http://pacNAS.github.io/blog/2014/06/11/future/"/>
-    <updated>2014-06-11T20:54:00+02:00</updated>
-    <id>http://pacNAS.github.io/blog/2014/06/11/future</id>
-    <content type="html"><![CDATA[<p>First post after a couple of busy month. After setting up my cubox-i (of course using
-<a href="http://petemanchester.github.io/MediaPlayer/">MediaPlayer</a>) and some more systems
-at home, I am back on track and try to push pacnas further.</p>
+    <title type="html"><![CDATA[future - more thoughts]]></title>
+    <link href="http://pacNAS.github.io/blog/2014/06/12/future/"/>
+    <updated>2014-06-12T20:54:00+02:00</updated>
+    <id>http://pacNAS.github.io/blog/2014/06/12/future</id>
+    <content type="html"><![CDATA[<p>Having slept a good night I re-tought a couple of my previously written lines.</p>
 
-<p>Unfortunately there is not a lot of community interest in this project right now, so
-if you like to participate or contribute, just write an email to <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#116;&#114;&#x69;&#x70;&#x6c;&#x65;&#x6d;&#x40;&#x70;&#x61;&#x63;&#110;&#x61;&#x73;&#x2e;&#x64;&#x65;">&#116;&#114;&#x69;&#x70;&#x6c;&#x65;&#x6d;&#64;&#x70;&#97;&#99;&#x6e;&#97;&#115;&#x2e;&#100;&#x65;</a>.</p>
+<p>The release concept sounds still really cool to me, question is, if we really
+do have enough resources to keep a rolling-release going. Most probably we could
+reuse most of the stuff, that AL is already doing there, but it still is a lot
+of work to stay in sync. My thoughts right now go into the direction of leaving
+the rolling release aside and concentrate on a fixed release. The first fixed release
+will basically be a snapshot of the current ABS in AL.</p>
 
-<p>Currently I do have some ideas for the future of this project and I would like to
-bring these to your attention in this post.</p>
-
-<h1>Release Concept</h1>
-
-<p>After looking at a lot of other distributions, I do like the concept of <a href="http://www.archlinux.org">ArchLinux</a>
-&ndash; pretty obvious, since this distro is going to be based on this one &ndash; but also
-I do like others as well. For the release concept, I think, that <a href="http://alpinelinux.org/">alpinelinux</a>
-has a very interesting one. It is a rolling release distro, if you look at the so
-called &ldquo;edge&rdquo;-version. But furthermore there are several &ldquo;stable&rdquo; releases. Those
-are snapshotted roughly every 6 month. Alpine seems to use the currently available
-kernel at that time.</p>
-
-<p><a href="http://www.ubuntu.com/">Ubuntu</a> is doing something similar, in that they do a
-release every 6 month and every 2 years they do an LTS release. They do have the
-manpower to path their own LTS-Kernel, which is out of reach for us.</p>
-
-<p>So every 6 month seem to be too often for a NAS distribution. Furthermore it looks
-like, there needs to be patches for all available releases and this seems to be
-too much work right now as well. One of the major tasks involved are IMHO the patches
-for the kernel, because not every used kernel is an LTS kernel. See where this is
-heading? I guess, the solution to this one, would be to make a release every year
-at the time an LTS-kernel appears.</p>
-
-<p>Obviously this does resolve patches for the Kernel, but other applications do have
-different release cycles. This means, that the Snapshot could come to a slightly
-too late or too early time for some applications. But this seems to be a minor
-issue, in that if really needed for security purposes, the version could be bumped
-even during a stable release (as long as the configuration of this application does
-not change).</p>
-
-<p>So the release concept for pacnas will look like the following:</p>
-
-<ul>
-<li>have a rolling release</li>
-<li>have a &ldquo;stable&rdquo; release once a year or every two years when a LTS kernel appears
-(this could already be 3.16?)</li>
-<li>support each stable release for at least until the next stable release appears and
-slightly longer (6 month?)</li>
-</ul>
-
-
-<h2>Implications</h2>
-
-<p>To have a rolling release as well as a stable release does mean some implications
-on the package selection. In the first release we could try to use the standard
-pacman and provide a mirrorlist, which contains the release in the path to the
-packages. This could be a problem, if a user would like to upgrade from one release
-to another or to the rolling release. Therefor we could provide different mirrorlist-files
-which contain a line like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Server = http://host/pacnas/rolling/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Server = http://host/pacnas/stable-1/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Please note, that the names of the releases are not fixed yet ;&ndash;)</p>
-
-<h1>Security</h1>
-
-<p>Security is pretty high on most server distributions. Alpine does solve this by
-using <a href="http://grsecurity.net/">grsecurity</a> patches as well as <a href="http://pax.grsecurity.net/">Pax</a>
-and most probably through other tools and/or patches on applications.</p>
-
-<p>I guess we will put this on the todo list since right now, there is not much experience
-with stuff like this. But it will be put very high on the list.</p>
-
-<h1>Package Selection</h1>
-
-<p>The package selection is pretty important as well. Since there are not much contributions
-right now, the package selection will be very stripped. I gather, that the most
-important packages for a NAS system will be put into the distro.</p>
-
-<h2>first release</h2>
-
-<ul>
-<li>linux (well, that is obvious, right)</li>
-<li>btrfs</li>
-<li>samba</li>
-<li>nfs</li>
-<li>ssh</li>
-<li>netctl</li>
-<li>mdadm</li>
-<li>ftp</li>
-<li>rsync</li>
-</ul>
-
-
-<h2>future releases</h2>
-
-<ul>
-<li>ajenti or genesis</li>
-<li>nginx</li>
-<li>owncloud</li>
-<li>seafile</li>
-<li>crashplan</li>
-<li>&hellip;</li>
-</ul>
-
-
-<p>If you have specific packages, which you would like to see on this list, do not
-hesitate and write an email to the above mentioned email.</p>
-
-<h1>Automatisms</h1>
-
-<p>Since this distro is currently really understuffed (people and timewise), we need
-as much automatisms as possible.</p>
-
-<p>We are going to use the <a href="http://build.pacnas.de">pacnas buildbot</a> to build the
-packages. Most probably this needs to get extended to be able to build dependent
-packages in the correct order and fully automatic.</p>
-
-<p>Furthermore we need to &ldquo;copy&rdquo; packages from AL to our own repository. This should
-be done automatically as well. The most important part is to be able to sync changes
-in AL into our own Repo, if necessary. At least the watch of changes needs to get
-automated.</p>
-
-<h1>Next Steps</h1>
-
-<p>During the next couple of days, I will dig into the above mentioned automatisms
-and will try to automate as much as possible.</p>
-
-<p>Some Marketing is required as well, but before we are going to make some advertisement
-we should have a first rough version ready.</p>
+<p>What do you think about this one?</p>
 ]]></content>
   </entry>
   
